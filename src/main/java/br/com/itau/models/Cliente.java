@@ -22,5 +22,7 @@ public class Cliente {
 	private String nome;
 	private Date dataCadastro;
 	private Boolean ativo;
+	private String cgccpf;
+	private String email;
 
 }
