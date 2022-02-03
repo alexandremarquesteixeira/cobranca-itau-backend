@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.itau.models.Cliente;
 
 @RestController
-@RequestMapping("/usuarios")
+@RequestMapping("/clientes")
 public class ClienteResource {
 
 	@Autowired
@@ -32,8 +32,8 @@ public class ClienteResource {
 
 	@GetMapping("/{id}")
 	public ResponseEntity<Cliente> buscarPeloCodigo(@PathVariable Long id) {
-		Optional<Cliente> usuario = clienteRepository.findById(id);
-		return usuario.isPresent() ? ResponseEntity.ok(usuario.get()) : ResponseEntity.notFound().build();
+		Optional<Cliente> cliente = clienteRepository.findById(id);
+		return cliente.isPresent() ? ResponseEntity.ok(cliente.get()) : ResponseEntity.notFound().build();
 	}
 	
 	@GetMapping
