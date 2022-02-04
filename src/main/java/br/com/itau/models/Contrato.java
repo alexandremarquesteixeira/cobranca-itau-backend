@@ -1,6 +1,8 @@
 package br.com.itau.models;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -29,4 +31,20 @@ public class Contrato {
 		return cliente;
 	}
 
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
+
+	@Override
+	public String toString() {
+		return "Contrato{" +
+				"cliente=" + cliente +
+				", vlr_Contrato=" + vlr_Contrato +
+				", qtd_Parcelas=" + qtd_Parcelas +
+				'}';
+	}
 }
