@@ -17,3 +17,4 @@ CREATE TABLE contrato (
     cd_Cli INT(10) NOT NULL,
     FOREIGN KEY (cd_Cli) REFERENCES cliente (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+

@@ -27,24 +27,4 @@ public class Contrato {
 	private String status_Cobranca;
 	private String sit_Serasa;
 
-	public Cliente getcliente() {
-		return cliente;
-	}
-
-	public Cliente getCliente() {
-		return cliente;
-	}
-
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
-	}
-
-	@Override
-	public String toString() {
-		return "Contrato{" +
-				"cliente=" + cliente +
-				", vlr_Contrato=" + vlr_Contrato +
-				", qtd_Parcelas=" + qtd_Parcelas +
-				'}';
-	}
 }
