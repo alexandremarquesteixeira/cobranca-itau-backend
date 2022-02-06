@@ -44,7 +44,7 @@ public class EmailSendService {
         // Obtenha o objeto Session.// e passe o nome de usuário e a senha
         Session session = Session.getInstance(properties, new javax.mail.Authenticator() {
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication("alexandre.marques.teixeira@gmail.com ", "435525@Cami");
+                return new PasswordAuthentication("alexandre.marques.teixeira@gmail.com ", "xxxxxx");
             }
         });
 
