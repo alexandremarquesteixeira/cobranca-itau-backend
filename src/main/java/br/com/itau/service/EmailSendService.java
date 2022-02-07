@@ -44,7 +44,7 @@ public class EmailSendService {
         // Obtenha o objeto Session.// e passe o nome de usuário e a senha
         Session session = Session.getInstance(properties, new javax.mail.Authenticator() {
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication("alexandre.marques.teixeira@gmail.com ", "xxxxxx");
+                return new PasswordAuthentication("teixeira.marques.alexandre@gmail.com ", "435525@Cami");
             }
         });
 
@@ -57,7 +57,7 @@ public class EmailSendService {
             Message msg = new MimeMessage(session);
 
             // Definir De: campo de cabeçalho do cabeçalho.
-            msg.setFrom(new InternetAddress("alexandre.marqrques.teixeira@gmail.com"));
+            msg.setFrom(new InternetAddress("teixeira.marques.alexandre@gmail.com"));
 
             // Definir como: campo de cabeçalho do cabeçalho.
             msg.addRecipient(Message.RecipientType.TO, new InternetAddress(contrato.get().getCliente().getEmail()));
