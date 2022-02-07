@@ -23,49 +23,25 @@ public class EmailSendService {
         Locale localeBR = new Locale("pt","BR");
         NumberFormat dinheiro = NumberFormat.getCurrencyInstance(localeBR);
 
-        // O ID do e-mail do destinatário precisa ser mencionado.
-        String para = " fromaddress@gmail.com ";
-
-        // O ID do e-mail do remetente precisa ser mencionado
-        String from = " toaddress@gmail.com ";
-
-        // Supondo que você está enviando e-mail por gmails smtp
         String host = "smtp.gmail.com";
-
-        // Obter propriedades do sistema
         Properties properties = System.getProperties();
-
-        // Configurar servidor de e-mail
         properties.put("mail.smtp.host", host);
         properties.put("mail.smtp.port", "465");
         properties.put("mail.smtp.ssl.enable", "true");
         properties.put("mail.smtp.auth", "true");
-
-        // Obtenha o objeto Session.// e passe o nome de usuário e a senha
         Session session = Session.getInstance(properties, new javax.mail.Authenticator() {
             protected PasswordAuthentication getPasswordAuthentication() {
                 return new PasswordAuthentication("teixeira.marques.alexandre@gmail.com ", "435525@Cami");
             }
         });
 
-        // Usado para depurar problemas de SMTP
         session.setDebug(true);
 
         try {
-            // Cria um objeto MimeMessage padrão.
-            // Mensagem  MimeMessage = new MimeMessage (session);
             Message msg = new MimeMessage(session);
-
-            // Definir De: campo de cabeçalho do cabeçalho.
             msg.setFrom(new InternetAddress("teixeira.marques.alexandre@gmail.com"));
-
-            // Definir como: campo de cabeçalho do cabeçalho.
             msg.addRecipient(Message.RecipientType.TO, new InternetAddress(contrato.get().getCliente().getEmail()));
-
-            // Definir assunto: campo de cabeçalho
             msg.setSubject("Contratos de Renegociação de Crédito");
-
-            // Agora defina a mensagem real
             msg.setText("Ilmo Sr.(a) " + contrato.get().getCliente().getNome() + "\n" +
                     "Conforme solicitado, segue abaixo os contratos pré-aprovados para uma possivel renegociação"+"\n" +
                     "Produto: " + contrato.get().getCd_Produto() + "\n" +
